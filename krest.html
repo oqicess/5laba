@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>кресты - нули</title>
+    <title>Крестики</title>
     <style>
         table{
             border-collapse: collapse;
             margin: auto;
         }
         td {
-            border: 3px solid rgb(61, 62, 63);
+            border: 3px solid black;
             width: 50px;
             height: 50px;
-            background-color: rgb(217, 238, 27);
         }
         td:hover{
-            background-color: rgb(152, 45, 167);
+            background-color: pink;
         }
     </style>
 </head>
@@ -66,23 +65,24 @@
         var cs = 0; //чтобы можно было поставить 4 раз последний нолик
         function play(n){
             //-----------------чисто заполнение-------------------
-             if (!a[n]){
-                 a[n] = 1;
+            if (!a[n]){            
+                 a[n] = 1;           
                  if (cs < 4){
                  while (1){
-                     let pc = Math.floor(Math.random() * (8 - 0) + 0);
+                     let pc = Math.round(Math.random() * (8 - 0) + 0);
                      if (!a[pc]){
                          a[pc] = 2
                          break;
-                     }
-                 } 
-                }
+                    }
+                } 
+            }
                  ++cs;
-                 for (let i = 0; i < 9; ++i){
+                 for (let i = 0; i < 9; ++i){ 
                      if (a[i] === 1)  ooo(i);
                      if (a[i] === 2)  xxx(i);
                  }
-             }console.log(a + "   " + cs);
+             }
+             console.log(a + "   " + cs);
              //-------------------выборка победителя------------------------
              if (cs >= 3){
              if ((a[0] == 1 && a[3] == 1 && a[6] == 1) || (a[1] == 1 && a[4] == 1 && a[7] == 1) || (a[2] == 1 && a[5] == 1 && a[8] == 1) ||
@@ -136,11 +136,7 @@
              }
              }
             }
-             }
-             
-        
-        
-
+            }
     </script>
 </body>
 </html>
