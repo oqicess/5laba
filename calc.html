@@ -76,7 +76,9 @@
     </style>
 </head>
 <body>
-    <div class="head"><form><input id="text" type="text" value="" readonly></form></div>
+    <div class="head"><form>
+        <input id="text" type="text" value="" readonly></form>
+    </div>
     <div class="body">
     <table>
         <tr> <td colspan="3" class="blue"  onclick="C()">c</td> <td><div onclick="Vvod('/')">/</div></td> </tr>
@@ -89,16 +91,16 @@
         <tr> <td colspan="3"  onclick="Vvod('0')">0</td> <td class="green"  onclick="Q()">=</td> </tr>
     </table>
     </div>
-
 <script>
-    var a = 0, operation = 0;
-   var text = document.getElementById("text");
-   function Vvod (n){
+    var a = 0, operation = 0; 
+    var text = document.getElementById("text");
+    function Vvod (n){
        if ((n == "-" || n == "/" || n == "*" || n == "+") && (!operation)){
        text.value = text.value + n;
        console.log(text.value);
        a = n;
        ++operation;
+       console.log(a);
        }
        else{
            if (!(n == "-" || n == "/" || n == "*" || n == "+")){
@@ -108,24 +110,22 @@
            }
        }
    }
-   function C (){
+   function C (){  
        text.value = "";
        operation = 0;
    }
-   function Q (){
-    console.log(text[0]);
+   function Q (){ 
     operation = 0;
        if (a == 0) text.value = "ERROR";
        else {
            if (text.value[0] == 0 || text.value[0] == "/" || text.value[0] == "*" || text.value[0] == "+" || text.value[0] == "-")  
            text.value = "ERROR";
            else {
-              text.value = eval(text.value);
+              text.value = eval(text.value); 
               console.log(text.value);
            }
        }
    }
 </script>
-
 </body>
 </html>
